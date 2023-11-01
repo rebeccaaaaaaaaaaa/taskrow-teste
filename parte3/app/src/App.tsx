@@ -1,13 +1,15 @@
-import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from './components/Home';
-import { Cadastro } from './components/Cadastro';
-import { Grupos } from './components/Grupos';
-import { NoMatch } from './components/NoMatch';
+import { Home } from './pages/Home';
+import { Cadastro } from './pages/Cadastro';
+import { Grupos } from './pages/Grupos';
+import { NoMatch } from './pages/NoMatch';
+import { Header } from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
+    <Header />
      <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -16,6 +18,7 @@ function App() {
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </Router>
+    <Footer />
     </>
   )
 }
