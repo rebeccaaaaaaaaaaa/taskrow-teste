@@ -1,39 +1,11 @@
 import { Box, Button, Container, Flex, Heading, Input, List, ListItem, Text } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { Grupo } from "../context";
+import { Grupo } from "../context/Groupos";
 import { Link } from "react-router-dom";
 import { useGlobal } from "../hooks/useGlobal";
-import { useState } from "react";
 
 export function Grupos() {
-  const { grupos } = useGlobal();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredGroups, setFilteredGroups] = useState<Grupo[]>([]);
-
-  const filterGroupsByUser = (groups: Grupo[], username: string) => {
-    const filteredGroups: Grupo[] = [];
-
-    groups.forEach((group) => {
-      if (group.usuarios) {
-        group.usuarios.forEach((usuario) => {
-          if (usuario.nome.toLowerCase().includes(username.toLowerCase())) {
-            filteredGroups.push(group);
-          }
-        });
-      }
-
-      if (group.subGrupos) {
-        filteredGroups.push(...filterGroupsByUser(group.subGrupos, username));
-      }
-    });
-
-    return filteredGroups;
-  };
-
-  const handleSearch = () => {
-    const filtered = filterGroupsByUser(grupos, searchTerm);
-    setFilteredGroups(filtered);
-  };
+  const { grupos, searchTerm, setSearchTerm, handleSearch, filteredGroups  } = useGlobal();
 
   const renderGroups = (groups: Grupo[]) => {
     return (
