@@ -13,3 +13,14 @@
 - Para executar os arquivos da parte 2 basta abrir o arquivo index no seu navegador favorito.
 
 # Como executar a parte 3
+
+- Baixe ou clone o repositório
+- Entre na pasta clonada/baixada
+- No terminal digite - npm install
+- Para executar o projeto digite no terminal - npm run dev
+
+# O que foi utilizado para a criação da parte 3 
+
+- Vite na sua versão mais atual
+- React Router
+- Chakra UI
