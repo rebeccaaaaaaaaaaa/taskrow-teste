@@ -8,8 +8,8 @@ import {
     Input,
     useToast,
   } from "@chakra-ui/react";
-  import { SetStateAction, useState } from "react";
-  import { calculaDV, validaNumeroXpto } from "../utils"; // Importe as funções do módulo numeroXpto
+  import { useState } from "react";
+  import { validaNumeroXpto } from "../utils"; // Importe as funções do módulo numeroXpto
   
   export function Cadastro() {
     const toast = useToast();
@@ -20,23 +20,17 @@ import {
     const [emailError, setEmailError] = useState(false);
     const [xptoError, setXptoError] = useState(false);
   
-    const handleInputChangeName = (e: {
-      target: { value: SetStateAction<string> };
-    }) => {
+    const handleInputChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
       setInputName(e.target.value);
       setNameError(e.target.value.length < 3);
     };
   
-    const handleInputChangeEmail = (e: {
-      target: { value: SetStateAction<string> };
-    }) => {
+    const handleInputChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
       setInputEmail(e.target.value);
       setEmailError(!isValidEmail(e.target.value));
     };
   
-    const handleInputChangeXpto = (e: {
-      target: { value: SetStateAction<string> };
-    }) => {
+    const handleInputChangeXpto = (e: React.ChangeEvent<HTMLInputElement>) => {
       // Remover qualquer caractere não numérico
       const cleanedValue = e.target.value.replace(/[^0-9]/g, "");
       const formattedValue = formatXpto(cleanedValue);
