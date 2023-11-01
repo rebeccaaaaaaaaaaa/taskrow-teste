@@ -1,11 +1,10 @@
 import { Box, Container, Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Grupo } from "../context";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Importe o Link
 import { useGlobal } from "../hooks/useGlobal";
 
 export function Grupos() {
-
   const { grupos } = useGlobal()
 
   const renderGrupos = (grupos: Grupo[], depth = 0) => {
@@ -21,9 +20,9 @@ export function Grupos() {
               )}
               <Link to={`/grupos/${grupo.idGrupo}`}> {/* Link para /grupos/:id */}
                 <Text fontWeight="bold" ml={2}>
-                {grupo.nome}
+                  {grupo.nome}
                 </Text>
-            </Link>
+              </Link>
             </Flex>
             {grupo.usuarios && (
               <List ml={4}>

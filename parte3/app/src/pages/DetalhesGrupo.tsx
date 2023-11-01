@@ -1,20 +1,17 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
+import { useGlobal } from '../hooks/useGlobal';
 
 function DetalhesGrupo() {
   const { id } = useParams();
+  const { grupos } = useGlobal();
 
   if (id === undefined) {
     return <div>Parâmetro ID ausente.</div>;
   }
 
-  // esse objeto vai ser o que vai vir do context
-  const grupo = {
-    idGrupo: 1,
-    nome: 'Grupo 1',
-    descricao: 'Descrição do Grupo 1',
-  };
+  const grupo = grupos.find((g) => g.idGrupo === parseInt(id, 10));
 
-  if (grupo.idGrupo !== parseInt(id, 10)) {
+  if (!grupo) {
     return <div>Grupo não encontrado.</div>;
   }
 
@@ -22,8 +19,9 @@ function DetalhesGrupo() {
     <div>
       <h2>Detalhes do Grupo {grupo.nome}</h2>
       <p>Nome: {grupo.nome}</p>
-      <p>Descrição: {grupo.descricao}</p>
+
       {/* Adicione mais informações do grupo aqui */}
+      <Outlet />
     </div>
   );
 }
