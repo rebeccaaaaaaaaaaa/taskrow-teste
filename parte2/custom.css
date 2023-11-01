@@ -23,7 +23,7 @@ input, select {
     border: unset;
 }
 
-button{
+button {
     background-color: #06247b;
     border: unset;
     height: 30px;
@@ -46,13 +46,15 @@ h2 {
 
 .scrollable-images {
     max-height: 100vh;
-    overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
 }
 
 img {
-    width: 500px;
-    height: 500px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
