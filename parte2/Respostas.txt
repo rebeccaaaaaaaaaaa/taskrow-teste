@@ -1,31 +1,45 @@
 1 - De quais formas você sabe utilizar CSS para estilizar suas páginas?
 
-RESPOSTA:
+RESPOSTA: Inline, com arquivos externos e embedded (tag style dentro do html). Pode se aplicar também libs como Tailwind.
 
 
 2 - O que é um seletor CSS? Quais tipos de seletores você conhece?
 
-RESPOSTA:
+RESPOSTA: Um seletor no css é uma forma de identificar qual elemento pode receber determinada estilização. 
+          Como por exemplo: tags, ids, classes, por atributo (ex: input[type="text]).
 
 
 3 - O que faz este seletor: div > p?
 
-RESPOSTA: 
+RESPOSTA: O simbolo > significa que o estilo vai ser aplicado aos filhos do elemento.
 
 
 4 - Qual a diferença entre: div > p, div p e div + p , se é que há alguma?
 
-RESPOSTA:
+RESPOSTA: O simbolo > significa que o estilo vai ser aplicado aos filhos do elemento.
+          Usar algo como div p significa que vai aplicar o estilo para todos os elementos que estão dentro da div (NÃO NECESSARIAMENTE FILHOS)
+          Já com o div + p aplica o estilo logo apos o primeiro elemento. Não conta o primeiro elemento.
 
 
 5 - Quais valores você conhece para a propriedade display? Explique cada um deles.
 
-RESPOSTA:
+RESPOSTA: Para os valores de display, os mais comuns utilizados por mim no dia dia são: 
 
+          flex - permite que a gente crie layout flexiveis onde os elementos que estão dentro dele possam se ajustar de forma dinamica. 
+          block - define o elemento em block, fazendo com que ele ocupe todo o espaço disponivel.
+          inline - define um elemento em linha
+          none - define o elemento como não visivel
+          grid -  permite que possa ser criado um sistema de grade com linhas e colunas.
+
+         Mas conheço os outros.
 
 6 - Quais valores você conhece para a proprieadade position? Explique cada um deles.
 
-RESPOSTA:
+RESPOSTA: Conheço os mais comuns como absolute, relative e fixed. 
+
+          Absolute - Posiciona o elelemto em realação a posição do que chamamos do elemento pai.
+          Relative - Posiciona o elemento em realação a sua propia posição.
+          Fixed - Posiciona o elemento em relação a janela do navegador, exatamente o que foi feito no teste, ele fica fixo quando a página sofre o scroll.
 
 
 7 - Se um usuário acessa uma página de um computador e vê um título com uma fonte, e 
@@ -33,20 +47,26 @@ RESPOSTA:
     diferente, o que pode ter acontecido? Como você resolveria este problema?
 
 
-RESPOSTA:
+RESPOSTA: A fonte pode não ter carregado corretamente, por n motivos, acho que eu faria um preload da font assim 
+          como verificar o carregamento da font e/também limpar o cache do navegador.
 
 
 8 - Qual a diferença entre font-size: 10px, font-size: 10em, font-size: 10rem e font-size: 10pt?
 
 
-RESPOSTA:
+RESPOSTA: As diferenças são somente nas unidades de medidas, todas as formas vão aplicar um
+          tamanho para a font. Porém usar 'em' se basea no tamanho da font do elmnto pai. 
+          Usar o 'rem' se basea no tamanho da font do HTML (normamente 1rem significa 16px)
+          E por fim o 'pt' que eu não tinha conhecimento mas olhando a documentação do Mozila aprendi que é 
+          uma unidade de medida por polegada, (1 ponto é aproximadamente igual a 1/72 de polegada) mas não é escalavel porque 
+          é uma unidade de medida absoluta. 
 
 
 9 - De 1 a 5, diga quanto de cada um desses recursos você conhece:
-        Flex box
-        CSS grid
-        variáveis CSS
-        viewport
+        Flex box - 4
+        CSS grid - 4
+        variáveis CSS - 4
+        viewport - 3
 
         
 RESPOSTA:
@@ -55,5 +75,7 @@ RESPOSTA:
 10 - Quais sites você utiliza para consultar documentação de CSS? E como saber quais browsers suportam quais recursos?
 
 
-RESPOSTA:
+RESPOSTA: Minha principal font de consulta é o site do dev.mozilla : https://developer.mozilla.org/pt-BR/. 
+          Ao fim de uma busca dentro do site, como por exemplo de um seletor ou atributo, no fim da página 
+          tem uma tabela com a compatibilidade daquele recurso com os principais navegadores do mercado.
 
