@@ -17,7 +17,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/grupos" element={<Grupos />} />
         <Route path="*" element={<NoMatch />} />
-        <Route path="grupos/:id" element={<DetalhesGrupo />} />
+        <Route path="/grupos/:idGrupo" element={<DetalhesGrupo />} />
       </Routes>
     </Router>
     <Footer />

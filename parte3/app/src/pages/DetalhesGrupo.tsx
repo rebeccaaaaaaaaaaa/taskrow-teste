@@ -2,15 +2,30 @@ import { useParams, Outlet } from "react-router-dom";
 import { useGlobal } from "../hooks/useGlobal";
 import { Box, Container, Flex, Heading, List, ListItem } from "@chakra-ui/react";
 
+function findGroupById(groups, idGrupo) {
+  for (const group of groups) {
+    if (group.idGrupo === parseInt(idGrupo, 10)) {
+      return group;
+    }
+    if (group.subGrupos) {
+      const nestedGroup = findGroupById(group.subGrupos, idGrupo);
+      if (nestedGroup) {
+        return nestedGroup;
+      }
+    }
+  }
+  return null;
+}
+
 function DetalhesGrupo() {
-  const { id } = useParams();
+  const { idGrupo } = useParams();
   const { grupos } = useGlobal();
 
-  if (id === undefined) {
+  if (idGrupo === undefined) {
     return <div>Parâmetro ID ausente.</div>;
   }
 
-  const grupo = grupos.find((g) => g.idGrupo === parseInt(id, 10));
+  const grupo = findGroupById(grupos, idGrupo);
 
   if (!grupo) {
     return (
