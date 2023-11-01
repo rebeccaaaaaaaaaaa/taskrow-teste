@@ -1,0 +1,11 @@
+Questão: 
+
+1 - Observe que toda vez queessa url é chamada, ela gera uma imagem aleatória diferente, 
+    no entanto se você simplesmente adicionar 10 tags <img> em uma página com essa mesma URL as 
+    10 imagens serão iguais. Consegue dizer por que isso acontece?
+
+Resposta: Isso acontece porque para que as imagens sejam diferentes é necessário passar o 
+          parametro ?random='um numero', como por exemplo: 
+          <img src="https://picsum.photos/200/300?random=1">
+          <img src="https://picsum.photos/200/300?random=2">
+          Na documentação podemos ver mais informações sobre o uso: https://picsum.photos/

@@ -1,0 +1,59 @@
+1 - De quais formas você sabe utilizar CSS para estilizar suas páginas?
+
+RESPOSTA:
+
+
+2 - O que é um seletor CSS? Quais tipos de seletores você conhece?
+
+RESPOSTA:
+
+
+3 - O que faz este seletor: div > p?
+
+RESPOSTA: 
+
+
+4 - Qual a diferença entre: div > p, div p e div + p , se é que há alguma?
+
+RESPOSTA:
+
+
+5 - Quais valores você conhece para a propriedade display? Explique cada um deles.
+
+RESPOSTA:
+
+
+6 - Quais valores você conhece para a proprieadade position? Explique cada um deles.
+
+RESPOSTA:
+
+
+7 - Se um usuário acessa uma página de um computador e vê um título com uma fonte, e 
+    outro usuário visualiza esta mesma página em um outro computador, e vê o mesmo título com uma fonte 
+    diferente, o que pode ter acontecido? Como você resolveria este problema?
+
+
+RESPOSTA:
+
+
+8 - Qual a diferença entre font-size: 10px, font-size: 10em, font-size: 10rem e font-size: 10pt?
+
+
+RESPOSTA:
+
+
+9 - De 1 a 5, diga quanto de cada um desses recursos você conhece:
+        Flex box
+        CSS grid
+        variáveis CSS
+        viewport
+
+        
+RESPOSTA:
+
+
+10 - Quais sites você utiliza para consultar documentação de CSS? E como saber quais browsers suportam quais recursos?
+
+
+RESPOSTA:
+

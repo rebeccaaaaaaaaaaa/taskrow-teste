@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select {
+    height: 1.5rem;
+    border: unset;
+}
+
+button{
+    background-color: #06247b;
+    border: unset;
+    height: 30px;
+    color: #fff;
+    border-radius: 3px;
+    width: max-content;
+}
+
+.image-list {
+    flex: 1;
+    margin-left: 320px;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.scrollable-images {
+    max-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+}
