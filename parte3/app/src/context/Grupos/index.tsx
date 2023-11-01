@@ -39,23 +39,34 @@ export function GlobalProvider({ children }: GlobalProps) {
 
   const filterGroupsByUser = (groups: Grupo[], username: string) => {
     const filteredGroups: Grupo[] = [];
-
+  
     groups.forEach((group) => {
       if (group.usuarios) {
         group.usuarios.forEach((usuario) => {
           if (usuario.nome.toLowerCase().includes(username.toLowerCase())) {
-            filteredGroups.push(group);
+            filteredGroups.push({
+              idGrupo: group.idGrupo,
+              nome: group.nome,
+            });
           }
         });
       }
-
+  
       if (group.subGrupos) {
-        filteredGroups.push(...filterGroupsByUser(group.subGrupos, username));
+        const filteredSubGroups = filterGroupsByUser(group.subGrupos, username);
+        if (filteredSubGroups.length > 0) {
+          filteredGroups.push({
+            idGrupo: group.idGrupo,
+            nome: group.nome,
+            subGrupos: filteredSubGroups,
+          });
+        }
       }
     });
-
+  
     return filteredGroups;
   };
+  
 
   const handleSearch = () => {
     const filtered = filterGroupsByUser(grupos, searchTerm);

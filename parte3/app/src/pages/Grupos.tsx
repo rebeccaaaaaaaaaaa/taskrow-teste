@@ -1,11 +1,11 @@
 import { Box, Button, Container, Flex, Heading, Input, List, ListItem, Text } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { Grupo } from "../context/Groupos";
+import { Grupo } from "../context/Grupos";
 import { Link } from "react-router-dom";
 import { useGlobal } from "../hooks/useGlobal";
 
 export function Grupos() {
-  const { grupos, searchTerm, setSearchTerm, handleSearch, filteredGroups  } = useGlobal();
+  const { grupos, searchTerm, setSearchTerm, handleSearch, filteredGroups } = useGlobal();
 
   const renderGroups = (groups: Grupo[]) => {
     return (
@@ -18,7 +18,7 @@ export function Grupos() {
               ) : (
                 <ChevronRightIcon boxSize={4} color="transparent" />
               )}
-              <Link to={`/grupos/${group.idGrupo}`}>{/* Link para /grupos/:id */}
+              <Link to={`/grupos/${group.idGrupo}`}>
                 <Text fontWeight="bold" ml={2}>
                   {group.nome}
                 </Text>
@@ -51,7 +51,7 @@ export function Grupos() {
         </Box>
         <Box background="#eee" p={10} width={'100%'}>
           <Flex>
-          <Input
+            <Input
               placeholder="Buscar por usuário..."
               background="#fff"
               value={searchTerm}
@@ -59,13 +59,13 @@ export function Grupos() {
             />
             <Button onClick={handleSearch} colorScheme="whatsapp">Buscar</Button>
           </Flex>
-            {filteredGroups.length === 0 ? (
-              <Box mt={5}>Digite um usuário para buscar seus grupos.</Box>
-            ) : (
-              <Box mt={5}>
-                {renderGroups(filteredGroups)}
-              </Box>
-            )}
+          {filteredGroups.length === 0 ? (
+            <Box mt={5}>Digite um usuário para buscar seus grupos.</Box>
+          ) : (
+            <Box mt={5}>
+              {renderGroups(filteredGroups)}
+            </Box>
+          )}
         </Box>
       </Flex>
     </Container>
