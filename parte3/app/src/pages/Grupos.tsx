@@ -60,7 +60,7 @@ export function Grupos() {
             <Button onClick={handleSearch} colorScheme="whatsapp">Buscar</Button>
           </Flex>
             {filteredGroups.length === 0 ? (
-              <Box mt={5}>Nenhum grupo encontrado.</Box>
+              <Box mt={5}>Digite um usuário para buscar seus grupos.</Box>
             ) : (
               <Box mt={5}>
                 {renderGroups(filteredGroups)}
