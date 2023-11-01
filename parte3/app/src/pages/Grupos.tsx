@@ -1,7 +1,7 @@
 import { Box, Container, Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 interface Usuario {
   idUsuario: number;
   nome: string;
@@ -36,9 +36,11 @@ export function Grupos() {
               ) : (
                 <ChevronRightIcon boxSize={4} color="transparent" />
               )}
-              <Text fontWeight="bold" ml={2}>
+              <Link to={`/grupos/${grupo.idGrupo}`}> {/* Link para /grupos/:id */}
+                <Text fontWeight="bold" ml={2}>
                 {grupo.nome}
-              </Text>
+                </Text>
+            </Link>
             </Flex>
             {grupo.usuarios && (
               <List ml={4}>
