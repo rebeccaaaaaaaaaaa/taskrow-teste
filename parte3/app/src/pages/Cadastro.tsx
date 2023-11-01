@@ -83,6 +83,17 @@ import {
         });
         return;
       }
+
+      // se todos os campos forem validos 
+      if (!xptoError && isValidEmail(inputEmail) && inputName.length >= 3) {
+        toast({
+          title: "",
+          description: "Registro feito com sucesso",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
     };
   
     const formatXpto = (value: string) => {
