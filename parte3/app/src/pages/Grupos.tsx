@@ -1,29 +1,12 @@
 import { Box, Container, Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import React, { useState, useEffect } from "react";
+import { Grupo } from "../context";
 import { Link } from "react-router-dom";
-interface Usuario {
-  idUsuario: number;
-  nome: string;
-}
-
-interface Grupo {
-  idGrupo: number;
-  nome: string;
-  usuarios?: Usuario[];
-  subGrupos?: Grupo[];
-}
+import { useGlobal } from "../hooks/useGlobal";
 
 export function Grupos() {
-  const [grupos, setGrupos] = useState<Grupo[]>([]);
 
-  useEffect(() => {
-    // Faz a solicitação fetch para carregar o arquivo JSON
-    fetch("/grupos.json")
-      .then((response) => response.json())
-      .then((data) => setGrupos(data.grupos))
-      .catch((error) => console.error("Erro ao carregar grupos.json:", error));
-  }, []);
+  const { grupos } = useGlobal()
 
   const renderGrupos = (grupos: Grupo[], depth = 0) => {
     return (
@@ -62,7 +45,7 @@ export function Grupos() {
 
   return (
     <Container maxW="8xl">
-      <Flex justifyContent="space-between" gap="10rem" mt={6}>
+      <Flex justifyContent="" gap="10rem" mt={6}>
         <Box background="#eee" p={10}>
           <Heading as={'h1'} fontSize={20} mb={10}>Grupos</Heading>
           {renderGrupos(grupos)}
