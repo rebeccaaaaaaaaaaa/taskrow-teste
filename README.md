@@ -17,6 +17,7 @@
 - Baixe ou clone o repositório
 - Entre na pasta clonada/baixada
 - No terminal digite - npm install
+- Lembre-se se entrar na pasta do projeto app
 - Para executar o projeto digite no terminal - npm run dev
 
 # O que foi utilizado para a criação da parte 3 
@@ -25,6 +26,3 @@
 - React Router
 - Chakra UI
   
-# Para visualizar a parte 3 online
-
-- Basta acessar o seguinte link: <a href="https://65430a4b1d213e027a50a17d--delicate-blancmange-77af0c.netlify.app/" > Ver aplicação </a>
