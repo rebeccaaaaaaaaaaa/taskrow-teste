@@ -4,10 +4,10 @@ const numeroXPTO = 4638; // Exemplo de número XPTO de 4 dígitos
 const numeroComDV = 46387; // Exemplo de número XPTO de 5 dígitos
 
 const dv = calculaDV(numeroXPTO);
-console.log(`Dígito verificador para ${numeroXPTO} é ${dv}`);
+console.log(`${dv}`);
 
 const isValid = validaNumeroXpto(numeroComDV);
-console.log(`O número ${numeroComDV} é válido? ${isValid}`);
+console.log(`${isValid}`);
 
 console.log(
   '------------------------------------------------------------------------------------------------'
