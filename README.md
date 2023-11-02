@@ -24,3 +24,7 @@
 - Vite na sua versão mais atual
 - React Router
 - Chakra UI
+  
+# Para visualizar a parte 3 online
+
+- Basta acessar o seguinte link: <a href="https://65430a4b1d213e027a50a17d--delicate-blancmange-77af0c.netlify.app/" > Ver aplicação </a>
