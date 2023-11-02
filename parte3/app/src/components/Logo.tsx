@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Logo = () => {
   const svgStyle = {
     fill: '#5c76c5'
