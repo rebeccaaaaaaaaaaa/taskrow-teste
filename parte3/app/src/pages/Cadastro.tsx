@@ -6,92 +6,22 @@ import {
     FormErrorMessage,
     FormLabel,
     Input,
-    useToast,
   } from "@chakra-ui/react";
-  import { useState } from "react";
-  import { validaNumeroXpto } from "../utils/utils";
-import { isValidEmail } from "../utils/validaEmail";
-import { formatXpto } from "../utils/formatXpto";
+import { useCadastro } from "../hooks/useCadastro";
   
   export function Cadastro() {
-    const toast = useToast();
-    const [inputName, setInputName] = useState("");
-    const [inputEmail, setInputEmail] = useState("");
-    const [inputXpto, setInputXpto] = useState("");
-    const [nameError, setNameError] = useState(false);
-    const [emailError, setEmailError] = useState(false);
-    const [xptoError, setXptoError] = useState(false);
-  
-    const handleInputChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setInputName(e.target.value);
-      setNameError(e.target.value.length < 3);
-    };
-  
-    const handleInputChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setInputEmail(e.target.value);
-      setEmailError(!isValidEmail(e.target.value));
-    };
-  
-    const handleInputChangeXpto = (e: React.ChangeEvent<HTMLInputElement>) => {
-      // Remover qualquer caractere não numérico
-      const cleanedValue = e.target.value.replace(/[^0-9]/g, "");
-      const formattedValue = formatXpto(cleanedValue);
-  
-      setInputXpto(formattedValue);
-      const numXpto = parseInt(cleanedValue, 10);
-  
-      if (cleanedValue.length !== 5) {
-        setXptoError(true);
-      } else {
-        setXptoError(!validaNumeroXpto(numXpto));
-      }
-    };
-   
-    const validateInputs = () => {
-      if (inputName.length < 3) {
-        toast({
-          title: "",
-          description: "O campo nome deve ter pelo menos 3 caracteres",
-          status: "error",
-          duration: 9000,
-          isClosable: true,
-        });
-        return;
-      }
-  
-      if (!isValidEmail(inputEmail)) {
-        toast({
-          title: "",
-          description: "O e-mail inserido não é válido",
-          status: "error",
-          duration: 9000,
-          isClosable: true,
-        });
-        return;
-      }
-  
-      if (xptoError) {
-        toast({
-          title: "",
-          description: "O número XPTO inserido não é válido",
-          status: "error",
-          duration: 9000,
-          isClosable: true,
-        });
-        return;
-      }
 
-      // se todos os campos forem validos 
-      if (!xptoError && isValidEmail(inputEmail) && inputName.length >= 3) {
-        toast({
-          title: "",
-          description: "Registro feito com sucesso",
-          status: "success",
-          duration: 9000,
-          isClosable: true,
-        });
-      }
-    };
+    const { 
+      emailError, 
+      handleInputChangeEmail, 
+      handleInputChangeName, 
+      nameError, 
+      handleInputChangeXpto,
+      inputEmail,
+      xptoError,
+      inputXpto,
+      validateInputs, 
+    } = useCadastro()
   
     return (
       <Container maxW="8xl">
